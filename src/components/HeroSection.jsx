@@ -112,7 +112,7 @@ const HeroRight = () => {
   );
 };
 
-// MAIN HERO SECTION COMPONENT
+// MAIN HERO SECTION COMPONENT (मोबाइल और डेस्कटॉप दोनों के लिए परफेक्ट रिस्पॉन्सिव ऑर्डर)
 const HeroSection = () => {
   return (
     <div className="w-full pt-12 lg:pt-20 bg-white relative overflow-hidden" id="home">
@@ -122,16 +122,25 @@ const HeroSection = () => {
       <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-indigo-100/30 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       {/* Main Container Layout */}
-      <main className="max-w-7xl mx-auto px-6 lg:px-8 pt-12 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
-        <section className="lg:col-span-6 order-2 lg:order-1">
+      {/* - मोबाइल पर 'flex flex-col' डिफॉल्ट रहेगा जिससे कोड का फ्लो ऊपर से नीचे रहेगा।
+        - डेस्कटॉप (lg:) पर आते ही यह 'lg:grid lg:grid-cols-12' में बदल जाएगा।
+      */}
+      <main className="max-w-7xl mx-auto px-6 lg:px-8 pt-12 pb-24 flex flex-col lg:grid lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+        
+        {/* LEFT COLUMN: यह मोबाइल पर नंबर 1 पर दिखेगा और डेस्कटॉप पर 6 कॉलम्स घेरेगा */}
+        <section className="w-full lg:col-span-6 order-1">
           <HeroLeft />
         </section>
-        <section className="lg:col-span-6 order-1 lg:order-2 flex justify-center w-full">
+        
+        {/* RIGHT COLUMN: यह मोबाइल पर अपने आप हेडिंग के नीचे (नंबर 2 पर) आएगा और डेस्कटॉप पर राइट में सेट होगा */}
+        <section className="w-full lg:col-span-6 order-2 flex justify-center">
           <HeroRight />
         </section>
       </main>
+
     </div>
   );
 };
 
 export default HeroSection;
+
