@@ -74,7 +74,7 @@ const ExpertiseServices = () => {
         
         {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="text-3xl uppercase tracking-widest text-[#0B4884] font-bold bg-blue-50 px-3 py-1 rounded-full">
+          <span className="text-2xl uppercase tracking-widest text-[#0B4884] font-bold bg-blue-50 px-3 py-1 rounded-full">
             Our Expertise
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-[#16365F] leading-[1.2]">
